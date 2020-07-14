@@ -1,0 +1,25 @@
+frame = new Frame(getTheme(), new Stretcherlayout(1), "Time");
+        frame.setCloseable(false);
+        frame.setPinneable(true);
+        Label time = new Label("");
+        time.addTickListener(() -> {
+            DateFormat df = new SimpleDateFormat("HH:mm:ss");
+            Date dateobj = new Date();
+            time.setText("\u00a7a\u00a7l" + df.format(dateobj));
+        });
+        frame.addChild(time);
+        information.setFontRenderer(fontRenderer);
+        frames.add(frame);
+
+        frame = new Frame(getTheme(), new Stretcherlayout(1), "Date");
+        frame.setCloseable(false);
+        frame.setPinneable(true);
+        Label date = new Label("");
+        date.addTickListener(() -> {
+            DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+            Date dateobj = new Date();
+            date.setText("\u00a7a\u00a7l" + df.format(dateobj));
+        });
+        frame.addChild(date);
+        information.setFontRenderer(fontRenderer);
+        frames.add(frame);
